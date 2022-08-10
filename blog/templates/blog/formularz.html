@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% block wyniki %}
+
+	<form method="post" class="" >
+	{% csrf_token %}
+
+	{{ form.as_p }}
+
+	<button type="submit">Save</button>
+	</br>
+	</form>
+	Wyslanie posta  do {{ form.cleaned_data.to }} zakonczone sukcesem
+
+	{% if sent %}
+
+		OK
+		</br>
+		Mail został wysłany.
+	</br>
+
+
+	{% else %}
+
+	NOK
+
+	</br>
+	Nie jest OK
+	</br>
+	{% endif %}
+
+{% endblock %}
+
+
+
+	
