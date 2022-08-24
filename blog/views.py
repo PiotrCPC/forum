@@ -97,14 +97,16 @@ def tresc(request):
     return render(request, 'blog/tresc.html', {})
 
 def o_nas(request):
-
-    a=5;
-    wyniki = MojeModele.objects.all()[:a]
     
 
     return render(request, 'blog/o_nas.html', {})
                   
-                  
+
+def zasady(request):
+    
+    return render(request, 'blog/zasady.html', {})
+
+
                   
 def person_view(request):
     Osoba = Person.objects.all()
@@ -122,12 +124,12 @@ def formularz(request):
             cd = form.cleaned_data
             #post_url = request.build_absolute_uri(pos)
             #imie = cd['name']
-            temat = cd['subject']
-            tresc = cd['message']
+            temat = cd['temat']
+            tresc = cd['wiadomosc']
             #post_url = request.build_absolute_uri(post.get_absolute_url())
             #subject = '{} ({}) prosze przeczytaj "{}"'.format(cd['name'], cd['email'], post.title)
             #send_mail = ('qqq', 'standardowa wiadomosc', 'django.testowanie@gmail.com', ['django.testowanie@gmail.com'])
-            send_mail(temat,tresc,'django.testowanie@gmail.com',[cd['to']])
+            send_mail(temat,tresc,'django.testowanie@gmail.com',[cd['nadawca']])
             sent = True
     else:
         form = EmailPostForm()
@@ -135,7 +137,6 @@ def formularz(request):
     return render(request, 'blog/formularz.html', {
                                                    'form':form,
                                                    'sent':sent,
-
                                                     })
 
 # Create your views here.

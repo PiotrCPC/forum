@@ -2,8 +2,6 @@
 {% load static %}
 
 {% block wyniki %}
-
-	
 	{% for user in posts %}
 		<div  id="post">
 			<span><i><small>Post został opublikowany: {{ user.published_date }} </small></i></span>
@@ -14,8 +12,7 @@
 					</br>
 		</div>
 	{% endfor %}
-
-	<br />
+	<br/>
 			<div style="display:block">
 				{% if page_obj.has_previous %}
 					<a href="?page=1">&laquo; first</a>
@@ -32,6 +29,10 @@
 			<br>
 	<span id="dodaj_wpis">
 	<button type="button" class="btn btn-primary"><a href="{% url 'dodaj_wpis'%}" style="text-decoration:none; color:black;">Kliknij, aby dodać nowy post</a></button>
-	</span>		
+	</span>	
+	
+	
+	
 			
 {% endblock %}
+

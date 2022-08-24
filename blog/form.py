@@ -15,13 +15,14 @@ class SecondForm(forms.ModelForm):
         fields = ('tytul_postu','tresc_postu',)
 
 class EmailPostForm(forms.Form):
-    subject = forms.CharField(max_length=100)
-    message = forms.CharField(required=False, widget=forms.Textarea)
+    temat = forms.CharField(max_length=100)
+    wiadomosc = forms.CharField(required=False, widget=forms.Textarea)
     #name = forms.CharField(max_length=25)
     #email = forms.EmailField()
-    to = forms.EmailField()
+    nadawca = forms.EmailField()
     #comments = forms.CharField(required = False,widget=forms.Textarea)
 
+    
 class FormDoMaila(forms.Form):
     imie = forms.CharField(max_length=100)
 

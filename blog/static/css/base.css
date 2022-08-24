@@ -1,22 +1,17 @@
 #dodaj_wpis {
 	
 	padding: 2;
-	
-	
 }
 
-#moj_styl {
-	color: red;
-}
 
 #post {
 	border-style:solid;
 	border-color: #6BBFF5;
 	margin-bottom: 2px;
-	
+	background-color: #d7eefa;	
 }
 
-#menu_right{
-	background-color: white;
-	
+#temat_maila {
+	color: orange;
 }
+
